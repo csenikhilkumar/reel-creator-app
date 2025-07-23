@@ -9,9 +9,21 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@imagekit/next": "^2.1.2",
+    "@types/bcrypt": "^6.0.0",
+    "@types/imagekit": "^3.1.5",
+    "@types/mongoose": "^5.11.96",
+    "bcrypt": "^6.0.0",
+    "dotenv": "^17.2.0",
+    "imagekit": "^6.0.0",
+    "imagekitio-next": "^1.0.1",
+    "lucide-react": "^0.525.0",
+    "mongoose": "^8.16.3",
     "next": "15.4.1",
+    "next-auth": "^4.24.11",
     "react": "19.1.0",
-    "react-dom": "19.1.0"
+    "react-dom": "19.1.0",
+    "react-hook-form": "^7.60.0"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
@@ -20,6 +32,7 @@
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "autoprefixer": "^10.4.21",
+    "daisyui": "^5.0.46",
     "eslint": "^9",
     "eslint-config-next": "15.4.1",
     "postcss": "^8.5.6",
