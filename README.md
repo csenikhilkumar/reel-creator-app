@@ -1,36 +1,138 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# ReelPro App
 
-## Getting Started
+ReelPro is a full-stack web application for creating and managing short video reels.  
+It is built with **Next.js**, **MongoDB**, **ImageKit** for media storage, and **NextAuth** for authentication.
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## 🚀 Features
+- **Next.js 14 (App Router)** for server-side rendering and API routes.
+- **MongoDB** with Mongoose for database operations.
+- **ImageKit.io** for optimized media uploads (images & videos).
+- **NextAuth.js** for secure authentication (Google, Credentials, etc.).
+- **Tailwind CSS** for modern and responsive UI.
+- **React Hook Form** for form handling and validation.
+- **Notification system** (custom provider for toast messages).
+
+---
+
+## 🛠️ Tech Stack
+- **Frontend:** Next.js (React 18), Tailwind CSS
+- **Backend:** Next.js API routes
+- **Database:** MongoDB (Mongoose ORM)
+- **Media Storage:** ImageKit.io
+- **Authentication:** NextAuth.js
+- **Deployment:** Vercel (recommended)
+
+---
+
+## 📂 Project Structure
+```
+reelPro/
+ ├── app/                 # App Router pages
+ │    ├── api/            # API endpoints (Next.js server routes)
+ │    ├── login/          # Login page
+ │    ├── register/       # Registration page
+ │    └── page.tsx        # Homepage
+ ├── components/          # UI components (Headers, Upload, etc.)
+ ├── models/              # Mongoose models (User, Video)
+ ├── lib/                 # Database & utility functions
+ ├── public/              # Static assets
+ ├── styles/              # Global CSS
+ ├── .env                 # Environment variables
+ ├── tailwind.config.js   # Tailwind config
+ ├── tsconfig.json        # TypeScript config
+ └── README.md            # Project documentation
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## ⚙️ Installation & Setup
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### 1. Clone the repository
+```bash
+git clone https://github.com/your-username/reelpro.git
+cd reelpro
+```
 
-## Learn More
+### 2. Install dependencies
+```bash
+npm install
+# or
+yarn install
+```
 
-To learn more about Next.js, take a look at the following resources:
+### 3. Environment Variables
+Create a `.env` file in the root directory and add the following:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```
+DATABASE_URL=mongodb+srv://<username>:<password>@cluster0.mongodb.net/reelPro
+NEXTAUTH_URL=http://localhost:3000
+NEXTAUTH_SECRET=<generate-a-random-secret>
+NEXT_PUBLIC_URL_ENDPOINT=https://ik.imagekit.io/your_imagekit_id
+NEXT_PUBLIC_PUBLIC_KEY=your_imagekit_public_key
+PRIVATE_KEY=your_imagekit_private_key
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### 4. Run the development server
+```bash
+npm run dev
+```
+Your app will be live at **http://localhost:3000**
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 📸 Image Upload with ImageKit
+- The `FileUpload` component uses **ImageKit’s SDK** (`imagekitio-next`) to handle media uploads.
+- Videos and images are uploaded to the `/videos` or `/images` folder respectively.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+## 🔐 Authentication
+- **NextAuth.js** is used for login & registration.
+- Supports OAuth providers (Google, GitHub) and credentials login.
+- Session is handled using `useSession` hook.
+
+---
+
+## 🗄️ Database (MongoDB)
+- All video metadata and user data are stored in **MongoDB**.
+- Models are defined in the `models/` folder (`User.ts`, `Video.ts`).
+
+---
+
+## 📦 Build for Production
+```bash
+npm run build
+npm start
+```
+
+---
+
+## 🧪 Testing
+Add your test cases in the `__tests__` folder and run:
+```bash
+npm run test
+```
+
+---
+
+## 🚀 Deployment
+- **Recommended:** [Vercel](https://vercel.com/)
+- Make sure to add the `.env` variables in your Vercel project.
+
+---
+
+## 🤝 Contributing
+Contributions, issues, and feature requests are welcome!  
+Feel free to check [issues page](https://github.com/your-username/reelpro/issues).
+
+---
+
+## 📜 License
+This project is licensed under the **MIT License**.
+
+---
+
+## ✨ Author
+**Nikhil** – [GitHub](https://github.com/csenikhilkumar)
